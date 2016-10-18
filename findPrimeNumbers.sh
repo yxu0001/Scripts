@@ -14,23 +14,23 @@ function isPrimeNumber() {
   #echo "variable="$variable
   
   i=2
-  valHalf=$(($variable/$i))
+  dividedVal=$(($variable/$i))
 
   mulipliers=()  
 
-  while [ $i -le $valHalf ]
+  while [ $i -le $dividedVal ]
   do
     #echo $i
     if [ $(($variable%$i)) == 0 ]; then
       echo '$i='$i >&2
-      return 00
+      return 0
     else
       if [ $i -eq 2 ]; then
         i=$(($i+1))
       else
         i=$(($i+2))
       fi
-      valHalf=$(($variable/$i))
+      dividedVal=$(($variable/$i))
     fi
   done 
   return 1
